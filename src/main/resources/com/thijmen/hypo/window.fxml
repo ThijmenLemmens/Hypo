@@ -1,17 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="338.0" prefWidth="446.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.thijmen.hypo.MainController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <ComboBox prefWidth="150.0" />
-
-    <Label fx:id="welcomeText" />
-    <Button onAction="#onHelloButtonClick" stylesheets="@css/styles.css" text="Hello!" />
-</VBox>
+<Pane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thijmen.hypo.MainController">
+   <children>
+      <ComboBox fx:id="comboBoxRentevastePeriode" layoutX="41.0" layoutY="105.0" onAction="#onSelectedItem" prefWidth="150.0" promptText="Rentevaste Periode" />
+      <Label layoutX="225.0" layoutY="32.0" text="Hypo" />
+      <Label layoutX="225.0" layoutY="57.0" text="Label" />
+      <Label layoutX="239.0" layoutY="109.0" text="Procent Rente: " />
+      <Label fx:id="labelProcentRente" layoutX="319.0" layoutY="110.0" prefHeight="17.0" prefWidth="45.0" text="0%" />
+      <TextField fx:id="textFieldInkomen" layoutX="42.0" layoutY="149.0" />
+      <GridPane fx:id="grid" gridLinesVisible="true" layoutX="25.0" layoutY="253.0" prefHeight="142.0" prefWidth="447.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="25.0" prefWidth="65.0" text="Inkomen">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Rentevaste periode" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Maximaal te lenen" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Rente bedrag" GridPane.rowIndex="3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Aflossingsbedrag" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label text="Totale maandbedrag" GridPane.rowIndex="5">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label text="Totaal betaald na 30 jaar" GridPane.rowIndex="6">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelInkomen" text="Label" GridPane.columnIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelRentevastePeriode" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelMaximaalTeLenen" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelRenteBedrag" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelAflossingBedrag" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelTotaleMaandbedrag" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelTotaalBetaald" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+         </children>
+      </GridPane>
+      <CheckBox fx:id="checkboxStudySchuld" layoutX="225.0" layoutY="153.0" mnemonicParsing="false" text="CheckBox" />
+      <Spinner layoutX="42.0" layoutY="188.0" />
+      <Button layoutX="202.0" layoutY="213.0" mnemonicParsing="false" onAction="#onCalculateClick" text="Calculate" />
+   </children>
+</Pane>
